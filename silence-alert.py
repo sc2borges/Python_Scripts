@@ -1,6 +1,7 @@
 import sys,os
 import argparse
 import requests, json
+import time
 from datetime import datetime, timedelta
 
 
@@ -58,7 +59,8 @@ def silence_alert(hours,minutes,owner,service,comments):
 # ISO8601 format
 # timestr = datetime_var.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
 
-  now = datetime.now()
+#   now = datetime.now()
+  now = datetime.utcnow()
 
   format = "%Y-%m-%dT%H:%M:%S.%f"  #e.g  2018-10-25T22:12:33.533330795Z
 
@@ -75,7 +77,6 @@ def silence_alert(hours,minutes,owner,service,comments):
                 {
                     "name": service_name,
                     "value": ".*"
-
                 }
               ],
               "startsAt": current_time ,
