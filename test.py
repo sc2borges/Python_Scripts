@@ -9,8 +9,9 @@ data = '{ "matchers": [ { "name": "alername1", "value": ".*" } ], "startsAt": "2
 # data =  {"matchers": [{"name": "alername1", "value": ".*"}], "startsAt": "2020/09/18T15:45:58.856Z", "endsAt": "2020/09/18T18:00:58.856Z", "createdBy": "service", "comment": "Silence", "status": {"state": "active"}}
 
 print(data)
-response = requests.post('http://localhost:8080/api/v1/silences', data=json.dumps(data))
-print(response.status_code)
+# response = requests.post('http://localhost:8080/api/v1/silences', data=json.dumps(data))
+response = requests.get('http://localhost:8080/api/v1/silences')
+print(response.reason)
 
 
 
