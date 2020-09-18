@@ -1,0 +1,15 @@
+{ "matchers":
+    [
+       {
+           "name": "alername1",
+           "value": ".*"
+       }
+     ],
+     "startsAt": "current_time" ,
+     "endsAt": "silence_end" ,
+     "createdBy": "service_name",
+     "comment": "Silence",
+     "status": {
+         "state": "active"
+       }
+    }
