@@ -73,14 +73,13 @@ def silence_alert(hours,minutes,owner,service,comments):
              }
 
   api_response = requests.post(url , data=json.dumps(payload), headers=headers)
-  if api_response.status_code == 200:
-        print( "Silence created at: " +  current_time )
-        # print(api_response)
-  elif (' ' in service_name )== True:
-        print( "Service should not have spaces - status: %s"  %  str(api_response.reason) )
-  else:
-        print("Error to Silence service: " + service_name  + " Status Code: " + str(api_response.status_code) )
 
+  if (' ' in service_name )== True:
+        print( "Service should not have spaces - status: %s"  %  str(api_response.reason) )
+  elif api_response.status_code != 200:
+       print("Error to Silence service: " + service_name  + " Status Code: " + str(api_response.status_code) )
+  else:
+       print( "Silence created at: " +  current_time )
 
 def main ():
     option_menu()
