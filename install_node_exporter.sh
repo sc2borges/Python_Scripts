@@ -19,4 +19,4 @@ rm node_exporter_current
 ln -s $NODE_DIR/$NODE_FOLDER node_exporter_current
 
 #restart the Node Exporter Service
-systemctl start prometheus-node-exporter.service
+systemctl restart prometheus-node-exporter.service
