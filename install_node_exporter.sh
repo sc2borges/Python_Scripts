@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -v
 
 NODE_VERSION="1.0.1"
 NODE_DIR="/opt/prometheus/exporters/dist"
